@@ -11,16 +11,16 @@ db.once('open', function callback () {
 });
 
 var greenSchema = mongoose.Schema({
-    buildingID: ObjectId,
+    buildingID: Number,
     address : String,
     city : String,
-    points : Number
-    sensors : [sensorID: Number, 
-              measurments: [timeStamp : Date, 
+    points : Number,
+    sensors : [{sensorID: Number, 
+              measurments: [{timeStamp : Date, 
                           energy: Number, 
                           device: String
-                          ]
-            ]
+                          }]
+            }],
     user: String // Only supports one user for now
 })
 
